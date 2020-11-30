@@ -1,0 +1,113 @@
+@import 'normalize.scss';
+
+$whiteTextColor: #fff;
+$btnColor: #ff690f;
+
+
+@mixin font-lato {
+    font-family: 'Lato', sans-serif;
+}
+
+@mixin font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+@mixin font-muli {
+    font-family: 'Mulish', sans-serif;
+}
+
+@mixin font-catamaran {
+    font-family: 'Catamaran', sans-serif;
+}
+
+body {
+    @include font-lato;
+}
+
+.section-inner {
+    max-width: 1260px;
+    margin: 0 auto;
+}
+
+.section-header {
+    background: url('../img/mainPic.png') no-repeat center;
+    background-size: cover;
+    
+    .section-inner{
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-navbar {
+        max-width: 1680px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 35px;
+        align-items: center;
+    }
+
+    &-logo img{
+        height: 61px;
+        width: 166px;
+    }
+
+    &-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+
+        &__item {
+            &:not(:last-child) {
+                margin-right: 45px;
+            }
+        }
+
+        &__item a{
+            @include font-muli;
+            color: $whiteTextColor;
+            font-size: 1em;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    }
+
+    &-content {
+        display: flex;
+        flex-grow: 1;
+    }
+
+    &-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &__title {
+            @include font-muli;
+            color: $whiteTextColor;
+            font-size: 1.5em;
+            font-weight: normal;
+            line-height: 36px;
+        }
+
+        &__button button{
+            @include font-catamaran;
+            font-size: 1.125em;
+            border-radius: 6px;
+            width: 240px;
+            height: 60px;
+            background-color: $btnColor;
+            color: $whiteTextColor;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 56px 0 0 0;   
+            padding: 0;
+        }
+    }
+
+}
