@@ -368,3 +368,71 @@ body {
       display: inline-block;
       margin: 56px 0 0 0;
       padding: 0; }
+
+.section-offer-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 930px;
+  margin: 0 auto;
+  padding-top: 90px;
+  padding-bottom: 75px; }
+  .section-offer-description__title {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 3.750em;
+    font-weight: 900;
+    margin: 0;
+    color: #333333; }
+  .section-offer-description__subtitle {
+    font-family: 'Mulish', sans-serif;
+    font-size: 1.125em;
+    font-weight: 300;
+    margin: 50px 0 0 0;
+    text-align: center;
+    line-height: 32px;
+    color: #565656; }
+
+.section-offer-carts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; }
+
+.section-offer-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .section-offer-cart__picture {
+    height: 190px;
+    width: 250px; }
+  .section-offer-cart__picture img {
+    display: block;
+    margin: 0 auto; }
+  .section-offer-cart__title {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 300;
+    font-size: 0.875em;
+    color: #565656;
+    margin: 45px 0 0 0;
+    padding: 0; }
+  .section-offer-cart__subtitle {
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 900;
+    font-size: 1.5em;
+    text-align: center;
+    color: #333333;
+    margin: 25px 0 0 0;
+    padding: 0; }
+  .section-offer-cart__btn button {
+    display: block;
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 900;
+    font-size: 0.938em;
+    width: 120px;
+    height: 50px;
+    border: none;
+    color: #fff;
+    background-color: #ff690f;
+    text-align: center;
+    margin: 30px 0 0 0;
+    padding: 0;
+    border-radius: 6px; }

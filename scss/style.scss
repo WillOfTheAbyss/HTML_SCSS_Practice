@@ -2,6 +2,8 @@
 
 $whiteTextColor: #fff;
 $btnColor: #ff690f;
+$titleColor: #333333;
+$subTitleColor: #565656;
 
 
 @mixin font-lato {
@@ -28,7 +30,7 @@ body {
     max-width: 1260px;
     margin: 0 auto;
 }
-
+//! Header
 .section-header {
     background: url('../img/mainPic.png') no-repeat center;
     background-size: cover;
@@ -107,6 +109,99 @@ body {
             display: inline-block;
             margin: 56px 0 0 0;   
             padding: 0;
+        }
+    }
+}
+
+//! Offer
+
+.section-offer {
+
+    &-description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 930px;
+        margin: 0 auto;
+        padding-top: 90px;
+        padding-bottom: 75px;
+
+
+
+        &__title {
+            @include font-catamaran;
+            font-size: 3.750em;
+            font-weight: 900;
+            margin: 0;
+            color: $titleColor;
+        }
+
+        &__subtitle {
+            @include font-muli;
+            font-size: 1.125em;
+            font-weight: 300;
+            margin: 50px 0 0 0;
+            text-align: center;
+            line-height: 32px;
+            color: $subTitleColor;
+        }
+
+    }
+
+    &-carts {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    &-cart {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__picture {
+            height: 190px;
+            width: 250px;
+        }
+
+        &__picture img{
+            display: block;
+            margin: 0 auto;
+        }
+
+        &__title {
+            @include font-muli;
+            font-weight: 300;
+            font-size: 0.875em;
+            color: $subTitleColor;
+            margin: 45px 0 0 0;
+            padding: 0;
+        }
+
+        &__subtitle {
+            @include font-catamaran;
+            font-weight: 900;
+            font-size: 1.5em;
+            text-align: center;
+            color: $titleColor;
+            margin: 25px 0 0 0;
+            padding: 0;
+        }
+
+        &__btn button{
+            display: block;
+            @include font-catamaran;
+            font-weight: 900;
+            font-size: 0.938em;
+            width: 120px;
+            height: 50px;
+            border: none;
+            color: $whiteTextColor;
+            background-color: $btnColor;
+            text-align: center;
+            margin: 30px 0 0 0;
+            padding: 0;
+            border-radius: 6px;
         }
     }
 
