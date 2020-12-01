@@ -312,27 +312,22 @@ body {
 
 .section-header {
   background: url("../img/mainPic.png") no-repeat center;
-  background-size: cover; }
-  .section-header .section-inner {
-    height: 100vh;
-    display: flex;
-    flex-direction: column; }
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
   .section-header-navbar {
-    max-width: 1680px;
-    margin: 0 auto;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    padding-top: 35px;
-    align-items: center; }
+    max-width: 1680px;
+    margin-top: 35px;
+    width: 100%; }
   .section-header-logo img {
     height: 61px;
     width: 166px; }
   .section-header-menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center; }
+    display: flex; }
     .section-header-menu__item:not(:last-child) {
       margin-right: 45px; }
     .section-header-menu__item a {
@@ -343,11 +338,14 @@ body {
       text-decoration: none; }
   .section-header-content {
     display: flex;
-    flex-grow: 1; }
+    flex-grow: 1;
+    align-self: stretch;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px; }
   .section-header-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; }
+    max-width: 1260px;
+    width: 100%; }
     .section-header-wrapper__title {
       font-family: 'Mulish', sans-serif;
       color: #fff;
@@ -367,72 +365,118 @@ body {
       text-decoration: none;
       display: inline-block;
       margin: 56px 0 0 0;
-      padding: 0; }
+      padding: 0;
+      outline: none; }
 
-.section-offer-description {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 930px;
-  margin: 0 auto;
-  padding-top: 90px;
-  padding-bottom: 75px; }
-  .section-offer-description__title {
-    font-family: 'Catamaran', sans-serif;
-    font-size: 3.750em;
-    font-weight: 900;
-    margin: 0;
-    color: #333333; }
-  .section-offer-description__subtitle {
-    font-family: 'Mulish', sans-serif;
-    font-size: 1.125em;
-    font-weight: 300;
-    margin: 50px 0 0 0;
-    text-align: center;
-    line-height: 32px;
-    color: #565656; }
-
-.section-offer-carts {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around; }
-
-.section-offer-cart {
+.section-offer {
   display: flex;
   flex-direction: column;
   align-items: center; }
-  .section-offer-cart__picture {
-    height: 190px;
-    width: 250px; }
-  .section-offer-cart__picture img {
-    display: block;
-    margin: 0 auto; }
-  .section-offer-cart__title {
-    font-family: 'Mulish', sans-serif;
-    font-weight: 300;
-    font-size: 0.875em;
-    color: #565656;
-    margin: 45px 0 0 0;
-    padding: 0; }
-  .section-offer-cart__subtitle {
-    font-family: 'Catamaran', sans-serif;
-    font-weight: 900;
-    font-size: 1.5em;
-    text-align: center;
-    color: #333333;
-    margin: 25px 0 0 0;
-    padding: 0; }
-  .section-offer-cart__btn button {
-    display: block;
-    font-family: 'Catamaran', sans-serif;
-    font-weight: 900;
-    font-size: 0.938em;
-    width: 120px;
-    height: 50px;
-    border: none;
-    color: #fff;
-    background-color: #ff690f;
-    text-align: center;
-    margin: 30px 0 0 0;
-    padding: 0;
-    border-radius: 6px; }
+  .section-offer-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 930px;
+    padding-top: 90px;
+    padding-bottom: 75px; }
+    .section-offer-description__title {
+      font-family: 'Catamaran', sans-serif;
+      font-size: 3.750em;
+      font-weight: 900;
+      color: #333333; }
+    .section-offer-description__subtitle {
+      font-family: 'Mulish', sans-serif;
+      font-size: 1.125em;
+      font-weight: 300;
+      margin-top: 50px;
+      text-align: center;
+      line-height: 32px;
+      color: #565656; }
+  .section-offer-carts {
+    display: flex;
+    justify-content: space-between; }
+  .section-offer-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .section-offer-cart__picture {
+      height: 190px;
+      width: 250px; }
+    .section-offer-cart__picture img {
+      display: block;
+      margin: 0 auto; }
+    .section-offer-cart__title {
+      font-family: 'Mulish', sans-serif;
+      font-weight: 300;
+      font-size: 0.875em;
+      color: #565656;
+      margin-top: 45px;
+      padding: 0; }
+    .section-offer-cart__subtitle {
+      font-family: 'Catamaran', sans-serif;
+      font-weight: 900;
+      font-size: 1.5em;
+      text-align: center;
+      color: #333333;
+      margin-top: 25px;
+      padding: 0; }
+    .section-offer-cart__btn button {
+      display: block;
+      font-family: 'Catamaran', sans-serif;
+      font-weight: 900;
+      font-size: 0.938em;
+      width: 120px;
+      height: 50px;
+      border: none;
+      color: #fff;
+      background-color: #ff690f;
+      text-align: center;
+      margin-top: 30px;
+      padding: 0;
+      border-radius: 6px;
+      outline: none; }
+
+.section-gallery {
+  margin-top: 160px; }
+  .section-gallery-content {
+    display: grid;
+    max-height: 1260px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 4% 4% 1fr; }
+  .section-gallery-picture__max {
+    grid-area: max;
+    align-self: stretch;
+    grid-area: 1 / 1 / 2 / 2;
+    max-height: 420px; }
+  .section-gallery-picture__sports {
+    grid-area: sports;
+    align-self: stretch;
+    grid-area: 1 / 2 / 2 / 3;
+    max-height: 420px; }
+  .section-gallery-picture__contrast {
+    grid-area: contrast;
+    align-self: stretch;
+    grid-area: 1 / 3 / 3 / 4;
+    max-height: 790px; }
+  .section-gallery-picture__fezbot {
+    grid-area: fezbot;
+    align-self: stretch;
+    grid-area: 2 / 1 / 6 / 2;
+    max-height: 840px; }
+  .section-gallery-picture__snowboard {
+    grid-area: snowboard;
+    grid-area: 2 / 2 / 4 / 3;
+    align-self: stretch;
+    max-height: 420px; }
+  .section-gallery-picture__naomi {
+    grid-area: naomi;
+    align-self: stretch;
+    grid-area: 4 / 2 / 6 / 3;
+    max-height: 420px; }
+  .section-gallery-picture__joshua {
+    grid-area: joshua;
+    align-self: stretch;
+    grid-area: 3 / 3 / 6 / 4; }
+  .section-gallery-picture img {
+    width: 100%;
+    height: 100%; }
