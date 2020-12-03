@@ -303,13 +303,20 @@ template {
 [hidden] {
   display: none; }
 
+* {
+  box-sizing: border-box; }
+
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Mulish', sans-serif;
   background-color: #f6f6f6; }
 
 .section-inner {
   max-width: 1260px;
   margin: 0 auto; }
+
+.section-outer {
+  padding-left: 20px;
+  padding-right: 20px; }
 
 .section-header {
   background: url("../img/mainPic.png") no-repeat center;
@@ -345,6 +352,8 @@ body {
     align-items: center;
     margin-top: 50px; }
   .section-header-wrapper {
+    display: flex;
+    flex-direction: column;
     max-width: 1260px;
     width: 100%; }
     .section-header-wrapper__title {
@@ -364,83 +373,113 @@ body {
       border: none;
       text-align: center;
       text-decoration: none;
-      display: inline-block;
       margin: 56px 0 0 0;
       padding: 0;
       outline: none; }
+  @media (max-width: 767px) {
+    .section-header {
+      height: 650px; }
+      .section-header-navbar {
+        margin-top: 10px;
+        justify-content: center; }
+      .section-header-wrapper__title {
+        text-align: center; }
+      .section-header-menu {
+        display: none; } }
+  @media (max-width: 1199px) {
+    .section-header-content {
+      align-self: center; }
+    .section-header-wrapper__button {
+      align-self: center; } }
 
-.section-offer .section-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
-
-.section-offer-description {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 90px;
-  padding-bottom: 75px; }
-  .section-offer-description__title {
-    font-family: 'Catamaran', sans-serif;
-    font-size: 3.750em;
-    font-weight: 900;
-    color: #333333; }
-  .section-offer-description__subtitle {
-    font-family: 'Mulish', sans-serif;
-    font-size: 1.125em;
-    font-weight: 300;
-    text-align: center;
-    color: #565656;
-    max-width: 930px;
-    margin-top: 50px;
-    line-height: 32px; }
-
-.section-offer-carts {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  width: 100%; }
-
-.section-offer-cart {
-  display: flex;
-  flex-direction: column;
-  align-items: center; }
-  .section-offer-cart__picture {
-    height: 190px;
-    width: 250px; }
-  .section-offer-cart__picture img {
-    display: block;
-    margin: 0 auto; }
-  .section-offer-cart__subtitle {
-    font-family: 'Mulish', sans-serif;
-    font-weight: 300;
-    font-size: 0.875em;
-    color: #565656;
-    padding: 0;
-    margin-top: 45px; }
-  .section-offer-cart__title {
-    font-family: 'Catamaran', sans-serif;
-    font-weight: 900;
-    font-size: 1.5em;
-    text-align: center;
-    color: #333333;
-    padding: 0;
-    margin-top: 25px; }
-  .section-offer-cart__btn button {
-    display: block;
-    font-family: 'Catamaran', sans-serif;
-    font-weight: 900;
-    font-size: 0.938em;
-    width: 120px;
-    height: 50px;
-    border: none;
-    color: #fff;
-    background-color: #ff690f;
-    text-align: center;
-    margin-top: 30px;
-    padding: 0;
-    border-radius: 6px;
-    outline: none; }
+.section-offer {
+  margin-top: 90px; }
+  .section-offer .section-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+  .section-offer-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 75px; }
+    .section-offer-description__title {
+      font-family: 'Catamaran', sans-serif;
+      font-size: 3.750em;
+      font-weight: 900;
+      color: #333333; }
+    .section-offer-description__subtitle {
+      font-family: 'Mulish', sans-serif;
+      font-size: 1.125em;
+      font-weight: 300;
+      text-align: center;
+      color: #565656;
+      max-width: 930px;
+      margin-top: 50px;
+      line-height: 32px; }
+  .section-offer-carts {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%; }
+  .section-offer-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .section-offer-cart__picture {
+      height: 190px;
+      width: 250px; }
+    .section-offer-cart__picture img {
+      display: block;
+      margin: 0 auto; }
+    .section-offer-cart__subtitle {
+      font-family: 'Mulish', sans-serif;
+      font-weight: 300;
+      font-size: 0.875em;
+      color: #565656;
+      padding: 0;
+      margin-top: 45px; }
+    .section-offer-cart__title {
+      font-family: 'Catamaran', sans-serif;
+      font-weight: 900;
+      font-size: 1.5em;
+      text-align: center;
+      color: #333333;
+      padding: 0;
+      margin-top: 25px; }
+    .section-offer-cart__btn button {
+      display: block;
+      font-family: 'Catamaran', sans-serif;
+      font-weight: 900;
+      font-size: 0.938em;
+      width: 120px;
+      height: 50px;
+      border: none;
+      color: #fff;
+      background-color: #ff690f;
+      text-align: center;
+      margin-top: 30px;
+      padding: 0;
+      border-radius: 6px;
+      outline: none; }
+  @media (max-width: 575px) {
+    .section-offer {
+      margin-top: 50px; }
+      .section-offer-description {
+        margin-bottom: 30px; }
+        .section-offer-description__title {
+          text-align: center; }
+      .section-offer-carts {
+        flex-direction: column; }
+      .section-offer-cart {
+        margin-top: 40px; } }
+  @media (max-width: 767px) and (min-width: 576px) {
+    .section-offer {
+      margin-top: 50px; }
+      .section-offer-carts {
+        flex-wrap: wrap; }
+      .section-offer-cart:last-child {
+        margin: 60px auto 0 auto; } }
 
 .section-gallery {
   margin-top: 160px; }
@@ -486,6 +525,9 @@ body {
   .section-gallery-picture img {
     width: 100%;
     height: 100%; }
+  @media (max-width: 767px) {
+    .section-gallery {
+      margin-top: 100px; } }
 
 .section-crew {
   margin-top: 160px; }
@@ -529,6 +571,21 @@ body {
       color: #333333;
       padding: 0;
       margin-top: 20px; }
+  @media (max-width: 575px) {
+    .section-crew {
+      margin-top: 70px; }
+      .section-crew-wrapper {
+        flex-direction: column;
+        margin-top: 35px; }
+      .section-crew-person {
+        margin-top: 30px; } }
+  @media (max-width: 767px) and (min-width: 768px) {
+    .section-crew {
+      margin-top: 100px; } }
+  @media (max-width: 991px) and (min-width: 768px) {
+    .section-crew-person__image {
+      max-width: 180px;
+      max-height: 180px; } }
 
 .section-school {
   background: url("../img/school_background.png") no-repeat center;
@@ -539,45 +596,80 @@ body {
   align-items: center; }
   .section-school .section-inner {
     display: flex;
-    flex-grow: 1;
-    max-height: 100%; }
-  .section-school-description__title {
-    font-family: 'Catamaran', sans-serif;
-    font-size: 3.750em;
-    font-weight: 900;
-    color: #333333; }
-  .section-school-description__text {
-    font-family: 'Mulish', sans-serif;
-    font-size: 1.125em;
-    font-weight: 400;
-    color: #565656;
-    max-width: 820px;
-    text-align: left;
-    margin-top: 5%;
-    line-height: 32px; }
-    .section-school-description__text p {
-      margin: 0; }
-    .section-school-description__text p:not(:first-child) {
-      margin-top: 18px; }
-  .section-school-description__stats {
-    display: flex;
-    justify-content: space-between;
-    max-width: 730px;
-    margin-top: 80px; }
-  .section-school-description__item {
-    display: flex;
     flex-direction: column;
-    align-items: flex-start; }
-  .section-school-description__count {
-    font-family: 'Catamaran', sans-serif;
-    font-weight: 900;
-    font-size: 3em;
-    color: #ff690f; }
-  .section-school-description__subtitle {
-    font-family: 'Mulish', sans-serif;
-    font-weight: 700;
-    font-size: 1.125em;
-    color: #2b2b2b; }
+    flex-grow: 1; }
+  .section-school-description {
+    display: flex;
+    flex-direction: column; }
+    .section-school-description__title {
+      font-family: 'Catamaran', sans-serif;
+      font-size: 3.750em;
+      font-weight: 900;
+      color: #333333; }
+    .section-school-description__text {
+      font-family: 'Mulish', sans-serif;
+      font-size: 1.125em;
+      font-weight: 400;
+      color: #565656;
+      max-width: 820px;
+      text-align: left;
+      margin-top: 5%;
+      line-height: 32px; }
+      .section-school-description__text p {
+        margin: 0; }
+      .section-school-description__text p:not(:first-child) {
+        margin-top: 18px; }
+    .section-school-description__stats {
+      display: flex;
+      justify-content: space-between;
+      max-width: 730px;
+      margin-top: 80px; }
+    .section-school-description__item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; }
+    .section-school-description__count {
+      font-family: 'Catamaran', sans-serif;
+      font-weight: 900;
+      font-size: 3em;
+      color: #ff690f; }
+    .section-school-description__subtitle {
+      font-family: 'Mulish', sans-serif;
+      font-weight: 700;
+      font-size: 1.125em;
+      color: #2b2b2b; }
+  @media (max-width: 575px) {
+    .section-school {
+      height: 1260px;
+      margin-top: 50px; }
+      .section-school-description {
+        align-items: center; }
+        .section-school-description__title {
+          text-align: center;
+          font-size: 2em; }
+        .section-school-description__text {
+          text-align: center; }
+        .section-school-description__stats {
+          margin-top: 20px;
+          flex-direction: column; }
+          .section-school-description__stats > div {
+            margin-top: 15px;
+            text-align: center; }
+        .section-school-description__item {
+          align-items: center; } }
+  @media (max-width: 991px) and (min-width: 768px) {
+    .section-school {
+      height: 860px; }
+      .section-school-description {
+        max-width: 600px; } }
+  @media (max-width: 767px) and (min-width: 576px) {
+    .section-school {
+      height: 800px; }
+      .section-school-description {
+        max-width: 600px; } }
+  @media (max-width: 1199px) and (min-width: 992px) {
+    .section-school-description__text {
+      max-width: 720px; } }
 
 .section-testimonials {
   margin-top: 160px; }
@@ -629,31 +721,37 @@ body {
       height: 13px; }
     .section-testimonials-circles .active {
       background-color: #ff690f; }
+  @media (max-width: 575px) {
+    .section-testimonials {
+      margin-top: 60px; }
+      .section-testimonials-title {
+        font-size: 2em; } }
 
 .section-contact {
   display: flex;
   margin-top: 160px; }
   .section-contact-wrapper {
     display: flex;
-    flex-direction: column;
     background-color: #333333;
     justify-content: center;
     flex-basis: 640px;
     align-items: center; }
+  .section-contact-wrap {
+    display: flex;
+    flex-direction: column; }
+  .section-contact-title {
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 900;
+    font-size: 3.75em;
+    color: #f7f7f7; }
   .section-contact-info {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     justify-content: space-around;
     font-family: 'Mulish', sans-serif;
     font-weight: 300;
     font-size: 1.125em;
     color: #f7f7f7; }
-    .section-contact-info__title {
-      font-family: 'Catamaran', sans-serif;
-      font-weight: 900;
-      font-size: 3.75em;
-      color: #f7f7f7; }
     .section-contact-info__phone {
       display: flex;
       align-items: center;
@@ -674,8 +772,6 @@ body {
       margin-right: 15px; }
   .section-contact-links {
     display: flex;
-    max-width: 400px;
-    width: 100%;
     justify-content: flex-start;
     margin-top: 50px; }
   .section-contact .fab {
@@ -690,3 +786,67 @@ body {
   .section-contact-map img {
     max-width: 100%;
     max-height: 640px; }
+  @media (max-width: 575px) {
+    .section-contact {
+      flex-direction: column; }
+      .section-contact-wrapper {
+        flex-basis: 0px;
+        padding: 40px 20px; }
+      .section-contact-info {
+        flex-basis: 300px;
+        align-items: flex-start;
+        margin-top: 40px; }
+        .section-contact-info__phone {
+          margin-top: 0px; }
+        .section-contact-info__geo {
+          margin-top: 0px; }
+        .section-contact-info__mail {
+          margin-top: 0px; }
+        .section-contact-info__clock {
+          margin-top: 0px; }
+      .section-contact-title {
+        text-align: center;
+        font-size: 3em; }
+      .section-contact-wrap {
+        width: 100%; }
+      .section-contact-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px; }
+      .section-contact .fab {
+        color: #979797;
+        font-size: 50px; } }
+  @media (max-width: 1199px) and (min-width: 576px) {
+    .section-contact {
+      flex-direction: column; }
+      .section-contact-wrapper {
+        flex-basis: 0px;
+        padding: 40px 20px; }
+      .section-contact-info {
+        flex-basis: 300px;
+        align-items: center;
+        margin-top: 40px; }
+        .section-contact-info__phone {
+          margin-top: 0px; }
+        .section-contact-info__geo {
+          margin-top: 0px;
+          text-align: center; }
+        .section-contact-info__mail {
+          margin-top: 0px; }
+        .section-contact-info__clock {
+          margin-top: 0px;
+          text-align: center; }
+      .section-contact-title {
+        text-align: center; }
+      .section-contact-wrap {
+        width: 100%; }
+      .section-contact-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px; }
+      .section-contact .fab {
+        color: #979797;
+        font-size: 50px; } }
+  @media (min-width: 1200px) {
+    .section-contact-info {
+      align-items: flex-start; } }

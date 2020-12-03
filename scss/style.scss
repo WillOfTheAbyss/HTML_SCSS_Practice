@@ -5,14 +5,16 @@ $btnColor: #ff690f;
 $titleColor: #333333;
 $subTitleColor: #565656;
 
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
 
-@mixin font-lato {
-    font-family: 'Lato', sans-serif;
-}
+$screen-xs-max: 575px;
+$screen-sm-max: 767px;
+$screen-md-max: 991px;
+$screen-lg-max: 1199px;
 
-@mixin font-montserrat {
-    font-family: 'Montserrat', sans-serif;
-}
 
 @mixin font-muli {
     font-family: 'Mulish', sans-serif;
@@ -46,14 +48,23 @@ $subTitleColor: #565656;
     color: $titleColor;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
-    @include font-lato;
+    @include font-muli;
     background-color: #f6f6f6;
 }
 
 .section-inner {
     max-width: 1260px;
     margin: 0 auto;
+}
+
+.section-outer {
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 //! Header
@@ -107,6 +118,8 @@ body {
     }
 
     &-wrapper {
+        display: flex;
+        flex-direction: column;
         max-width: 1260px;
         width: 100%;
 
@@ -129,10 +142,42 @@ body {
             border: none;
             text-align: center;
             text-decoration: none;
-            display: inline-block;
             margin: 56px 0 0 0;   
             padding: 0;
             outline: none;
+        }
+    }
+
+    @media (max-width: $screen-sm-max) {
+        height: 650px;
+        &-navbar {
+            margin-top:10px;
+            justify-content: center;
+        }
+
+        &-wrapper {
+    
+            &__title {
+                text-align: center;
+            }
+        }
+
+        &-menu {
+            display: none;
+        }
+    }
+
+    @media (max-width: $screen-lg-max) {
+
+        &-content {
+            align-self: center;
+        }
+
+        &-wrapper {
+
+            &__button{
+                align-self: center;
+            }
         }
     }
 }
@@ -140,6 +185,7 @@ body {
 //! Offer
 
 .section-offer {
+    margin-top: 90px;
     
     .section-inner {
         display: flex;
@@ -151,8 +197,7 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 90px;
-        padding-bottom: 75px;
+        margin-bottom: 75px;
 
         &__title {
             @include mainTitle;
@@ -218,6 +263,39 @@ body {
             padding: 0;
             border-radius: 6px;
             outline: none;
+        }
+    }
+
+    @media (max-width: $screen-xs-max) {
+        margin-top: 50px;
+
+        &-description {
+            margin-bottom: 30px;
+
+            &__title {
+                text-align: center;
+            }
+        }
+
+        &-carts {
+            flex-direction: column;
+        }
+
+        &-cart {
+            margin-top: 40px;
+        }
+    }
+
+    @media (max-width: $screen-sm-max) and (min-width: $screen-sm) {
+        margin-top: 50px;
+        &-carts {
+            flex-wrap: wrap;
+        }
+
+        &-cart {
+            &:last-child{
+                margin: 60px auto 0 auto;
+            }
         }
     }
 }
@@ -289,6 +367,9 @@ body {
         height: 100%;
     }
 
+    @media (max-width: $screen-sm-max) {
+        margin-top: 100px;
+    }
 }
 
 //! CREW
@@ -339,6 +420,34 @@ body {
             margin-top: 20px;
         }
     }
+
+    @media (max-width: $screen-xs-max) {
+        margin-top: 70px;
+
+        &-wrapper {
+            flex-direction: column;
+            margin-top: 35px;
+        }
+
+        &-person {
+            margin-top: 30px;
+        }
+    }
+
+    @media (max-width: $screen-sm-max) and (min-width: $screen-md){
+        margin-top: 100px;
+    }
+
+    @media (max-width: $screen-md-max) and (min-width: $screen-md) {
+
+        &-person {
+    
+            &__image {
+                max-width: 180px;
+                max-height: 180px;
+            }
+        }
+    }
 }
 
 //! SCHOOL
@@ -353,11 +462,13 @@ body {
 
     .section-inner{
         display: flex;
+        flex-direction: column;
         flex-grow: 1;
-        max-height: 100%;
     }
 
     &-description {
+        display: flex;
+        flex-direction: column;
         &__title {
             @include mainTitle;
         }
@@ -409,6 +520,65 @@ body {
         }
     }
 
+    @media (max-width: $screen-xs-max) {
+        height: 1260px;
+        margin-top: 50px;
+        
+        &-description {
+            align-items: center;
+
+            &__title {
+                text-align: center;
+                font-size: 2em;
+            }
+    
+            &__text {
+                text-align: center;
+            }
+
+            &__stats {
+                margin-top: 20px;
+                flex-direction: column;
+
+                & > div {
+                    margin-top: 15px;
+                    text-align: center;
+                }
+            }
+
+            
+            &__item {
+                align-items: center;
+            }
+        }
+    }
+
+
+    @media (max-width: $screen-md-max) and (min-width: $screen-md) {
+        height: 860px;
+
+        &-description {
+            max-width: 600px;
+        }
+    }
+
+    @media (max-width: $screen-sm-max) and (min-width: $screen-sm){
+        height: 800px;
+
+        &-description {
+            max-width: 600px;
+    
+        }
+    }
+
+    @media (max-width: $screen-lg-max) and (min-width: $screen-lg){
+        &-description {
+    
+            &__text {
+                max-width: 720px;
+            }
+        }
+    }
 }
 
 //! Testimonials
@@ -481,6 +651,15 @@ body {
             background-color: $btnColor;
         }
     }
+
+    @media (max-width: $screen-xs-max) {
+        margin-top: 60px;
+
+        &-title {
+            font-size: 2em;
+        }
+
+    }
 }
 
 //! CONTACT
@@ -489,32 +668,36 @@ body {
     display: flex;
     margin-top: 160px;
 
+    
+    
     &-wrapper {
         display: flex;
-        flex-direction: column;
         background-color: #333333;
         justify-content: center;
         flex-basis: 640px;
         align-items: center;
-        
+    }
+
+    &-wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-title {
+        @include font-catamaran;
+        font-weight: 900;
+        font-size: 3.75em;
+        color: #f7f7f7;
     }
 
     &-info {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
         justify-content: space-around;
         @include font-muli;
         font-weight: 300;
         font-size: 1.125em;
         color: #f7f7f7;
-
-        &__title {
-            @include font-catamaran;
-            font-weight: 900;
-            font-size: 3.75em;
-            color: #f7f7f7;
-        }
 
         &__phone {
             display: flex;
@@ -547,9 +730,7 @@ body {
     }
 
     &-links {
-        display: flex;        
-        max-width: 400px;
-        width: 100%;
+        display: flex;       
         justify-content: flex-start;
         margin-top: 50px;
     }
@@ -572,4 +753,116 @@ body {
         max-height: 640px;
     }
 
+    @media (max-width: $screen-xs-max) {
+
+        flex-direction: column;
+
+        &-wrapper {
+            flex-basis: 0px;
+            padding: 40px 20px;
+        }
+
+        &-info {
+            flex-basis: 300px;
+            align-items: flex-start;
+            margin-top: 40px;
+
+            &__phone {
+                margin-top: 0px;
+            }
+    
+            &__geo {
+                margin-top: 0px;
+
+            }
+    
+            &__mail {
+                margin-top: 0px;
+            }
+    
+            &__clock {
+                margin-top: 0px;
+            }
+        }
+
+        &-title {
+            text-align: center;
+            font-size: 3em;
+        }
+
+        &-wrap {
+            width: 100%;
+        }
+        
+        &-links {
+            display: flex;       
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .fab {
+            color: #979797;
+            font-size: 50px;
+        }
+    }
+
+    @media (max-width: $screen-lg-max) and (min-width: $screen-sm) {
+        flex-direction: column;
+
+        &-wrapper {
+            flex-basis: 0px;
+            padding: 40px 20px;
+        }
+
+        &-info {
+            flex-basis: 300px;
+            align-items: center;
+            margin-top: 40px;
+
+            &__phone {
+                margin-top: 0px;
+            }
+    
+            &__geo {
+                margin-top: 0px;
+                text-align: center;
+
+            }
+    
+            &__mail {
+                margin-top: 0px;
+            }
+    
+            &__clock {
+                margin-top: 0px;
+                text-align: center;
+            }
+        }
+
+        &-title {
+            text-align: center;
+        }
+
+        &-wrap {
+            width: 100%;
+        }
+        
+        &-links {
+            display: flex;       
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .fab {
+            color: #979797;
+            font-size: 50px;
+        }
+    }
+
+    @media (min-width: $screen-xl) {
+
+        &-info {
+            align-items: flex-start;
+        }
+    }
 }
